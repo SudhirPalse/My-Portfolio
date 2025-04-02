@@ -1,0 +1,78 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 30% 96%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 40 95% 65%;
+    --primary-foreground: 30 10% 15%;
+
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 30 10% 15%;
+
+    --muted: 30 10% 92%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 20 80% 85%;
+    --accent-foreground: 30 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 40 95% 65%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    scroll-behavior: smooth;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold relative pb-3 mb-6 inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block absolute h-1 w-3/4 bg-primary bottom-0 left-0 rounded;
+  }
+  
+  .skill-card {
+    @apply bg-white shadow-sm hover:shadow-md transition-shadow duration-300 rounded-lg p-4 flex items-center gap-3;
+    opacity: 1;
+  }
+
+  .animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  }
+}
